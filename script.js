@@ -89,7 +89,7 @@ function computerMove() {
 function resetGame() {
     board = ["", "", "", "", "", "", "", "", ""];
     gameActive = true;
-    currentPlayer = "X";
+    currentPlayer = "LOVE";
     statusDisplay.textContent = `${player1Name}'s turn`;
     document.querySelectorAll(".cell").forEach(cell => cell.textContent = "");
     popup.style.display = "none";
