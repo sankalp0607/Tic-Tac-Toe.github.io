@@ -1,7 +1,7 @@
  // script.js
 
 let board = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "LOVE";
+let currentPlayer = "X";
 let gameActive = true;
 let gameMode = "player";
 let player1Name = "";
@@ -49,7 +49,7 @@ function handleResultValidation() {
     }
 
     if (roundWon) {
-        displayWinner(currentPlayer === "LOVE" ? player1Name : player2Name);
+        displayWinner(currentPlayer === "X" ? player1Name : player2Name);
         gameActive = false;
         return;
     }
@@ -60,8 +60,8 @@ function handleResultValidation() {
         return;
     }
 
-    currentPlayer = currentPlayer === "LOVE" ? "SEX" : "LOVE";
-    statusDisplay.textContent = `${currentPlayer === "LOVE" ? player1Name : player2Name}'s turn`;
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    statusDisplay.textContent = `${currentPlayer === "X" ? player1Name : player2Name}'s turn`;
 }
 
 function displayWinner(winner) {
@@ -75,7 +75,7 @@ function makeMove(index) {
     document.getElementsByClassName("cell")[index].textContent = currentPlayer;
     handleResultValidation();
 
-    if (gameMode === "computer" && gameActive && currentPlayer === "SEX") {
+    if (gameMode === "computer" && gameActive && currentPlayer === "O") {
         setTimeout(computerMove, 500);
     }
 }
@@ -89,7 +89,7 @@ function computerMove() {
 function resetGame() {
     board = ["", "", "", "", "", "", "", "", ""];
     gameActive = true;
-    currentPlayer = "LOVE";
+    currentPlayer = "X";
     statusDisplay.textContent = `${player1Name}'s turn`;
     document.querySelectorAll(".cell").forEach(cell => cell.textContent = "");
     popup.style.display = "none";
