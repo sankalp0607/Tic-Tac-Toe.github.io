@@ -1,11 +1,11 @@
  // script.js
 
 let board = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "X";
+let currentPlayer = "LOVE";
 let gameActive = true;
 let gameMode = "player";
 let player1Name = "";
-let player2Name = "Computer";
+let player2Name = "MURAKH BOT";
 
 const statusDisplay = document.getElementById("status");
 const popup = document.getElementById("popup");
@@ -49,7 +49,7 @@ function handleResultValidation() {
     }
 
     if (roundWon) {
-        displayWinner(currentPlayer === "X" ? player1Name : player2Name);
+        displayWinner(currentPlayer === "LOVE" ? player1Name : player2Name);
         gameActive = false;
         return;
     }
@@ -60,8 +60,8 @@ function handleResultValidation() {
         return;
     }
 
-    currentPlayer = currentPlayer === "X" ? "O" : "X";
-    statusDisplay.textContent = `${currentPlayer === "X" ? player1Name : player2Name}'s turn`;
+    currentPlayer = currentPlayer === "LOVE" ? "SEX" : "LOVE";
+    statusDisplay.textContent = `${currentPlayer === "LOVE" ? player1Name : player2Name}'s turn`;
 }
 
 function displayWinner(winner) {
@@ -75,7 +75,7 @@ function makeMove(index) {
     document.getElementsByClassName("cell")[index].textContent = currentPlayer;
     handleResultValidation();
 
-    if (gameMode === "computer" && gameActive && currentPlayer === "O") {
+    if (gameMode === "computer" && gameActive && currentPlayer === "SEX") {
         setTimeout(computerMove, 500);
     }
 }
